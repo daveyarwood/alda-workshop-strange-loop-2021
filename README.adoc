@@ -1,6 +1,8 @@
-= Alda's dynamic relationship with Clojure
+= An introduction to text-based music with Alda
 
-A presentation written in Asciidoc via https://github.com/asciidoctor/asciidoctor-reveal.js#syntax-examples[asciidoctor-reveal.js].
+https://www.thestrangeloop.com/2021/an-introduction-to-text-based-music-with-alda.html[A workshop that I gave at Strange Loop 2021].
+
+Written in Asciidoc via https://github.com/asciidoctor/asciidoctor-reveal.js[asciidoctor-reveal.js].
 
 == Development
 
@@ -20,11 +22,15 @@ Build::
 
 [source, bash]
 ----
-bundle exec asciidoctor-revealjs index.adoc
+bin/build
 ----
+
+Present::
+
+Open `index.html` in your browser of choice.
 
 == License
 
-Copyright © 2019 Dave Yarwood
+Copyright © 2021 Dave Yarwood
 
 Distributed under the Eclipse Public License version 2.0.

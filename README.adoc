@@ -1,0 +1,30 @@
+= Alda's dynamic relationship with Clojure
+
+A presentation written in Asciidoc via https://github.com/asciidoctor/asciidoctor-reveal.js#syntax-examples[asciidoctor-reveal.js].
+
+== Development
+
+Prerequisites::
+
+* https://bundler.io[Bundler]
+
+Setup::
+
+[source, bash]
+----
+git submodule init && git submodule update
+bundle install
+----
+
+Build::
+
+[source, bash]
+----
+bundle exec asciidoctor-revealjs index.adoc
+----
+
+== License
+
+Copyright © 2019 Dave Yarwood
+
+Distributed under the Eclipse Public License version 2.0.

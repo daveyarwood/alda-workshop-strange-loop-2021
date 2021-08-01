@@ -1,4 +1,4 @@
-= Alda's dynamic relationship with Clojure
+= An introduction to text-based music with Alda
 :title-separator: {sp}|
 :!sectids:
 :imagesdir: images
@@ -22,17 +22,16 @@ how it has evolved over time.
 the JVM.
 --
 
-image:alda_logo.png[250,250]
-
-<=[?]=>
-
-image:clojure_logo.png[250,250]
+image:alda-vim-thinkpad.jpg[]
 
 == !
 
 [.notes]
 --
 1 minute
+TODO: Add a big call-out to join Alda Slack!
+#strangeloop
+Can ask questions during workshop in Slack and I can answer them live
 --
 
 [cols="2*"]
@@ -49,30 +48,6 @@ a|
 * icon:globe[] *djy.io, alda.io*
 |===
 
-== Adzerk
-
-[.notes]
---
-1 minute
-
-* I like this excerpt of our Senior Open Source Engineer job posting:
-** Adzerk is a world-class software platform for decision-making at scale.  Our
-ever-growing list of customers include the most innovative applications and
-publishers in the world, like Strava, Ticketmaster, Edmunds, WeTransfer, and
-imgur.
-** Great description of our product, emphasizing that we're essentially a
-decision engine.
-*** Can use the decision engine for ad serving, dynamic content selection or
-other purposes.
---
-
-* Ad serving APIs
-* Decision making at scale
-* Build your own innovative, server-side ad platform in weeks
-* <3 Clojure <3
-* We're hiring!
-** https://adzerk.com/careers/[adzerk.com/careers]
-
 == !
 
 [.notes]
@@ -88,6 +63,14 @@ got more into software development and I learned how I could use a text editor
 and the command line to develop software interactively.
 ** I believe that a tight feedback loop is essential to unlocking your
 creativity both when you're developing software and when you're composing music.
+
+TODO:
+* Is this slide necessary, or should I jump straight into showing Sibelius vs.
+  TUI and telling the story of learning music composition in college, etc.?
+* Create slides showing the "feedback loop" concept in software development and
+  then in music composition.
+* Either create a slide about the Sapir-Whorf hypothesis, or remove
+  snow_cone.jpg
 --
 
 image::elevator.jpg[background]
@@ -115,168 +98,6 @@ a|
 * Efficient
 * Liberating
 |===
-
-== Demo: Alda v1
-
-* 🕒 Time is of the essence! 🕒
-* To learn more about Alda:
-** https://alda.io[alda.io] (docs, tutorial)
-** https://github.com/alda-lang/alda[github.com/alda-lang/alda]
-** Previous talks on YouTube
-
-[.notes]
---
-* 5 minutes
-** See alda files in demo/alda-v1
-** Keep explanations short!
-** Objectives
-*** Show some Alda code on screen and play it
-*** Explain the role of inline Clojure code
---
-
-== !
-
-[.notes]
---
-The evolution of Alda's architecture
-12 minutes to get through phases 1-4
-
-This part is kind of a slog... I should probably try and speed through it as
-much as I can. Avoid going into too much detail, just cover the facts. I can
-always answer questions and go into more detail out of band. The real
-interesting bits are really at the end, when I discuss alda-clj.
---
-
-image::blueprint.jpg[background]
-
-== Phase 1: Single program
-
-image::phase1.svg[]
-
-== Phase 1: Single program
-
-[%step]
-* Problem: Clojure startup time
-* Problem: Blocks until playback is complete
-
-== Phase 2: Client/server (HTTP)
-
-image::phase2.svg[]
-
-== Phase 2: Client/server (HTTP)
-
-[%step]
-* [.line-through]#Problem: Clojure startup time#
-* [.line-through]#Problem: Blocks until playback is complete#
-* Problem: HTTP is a bit overkill for IPC
-* Problem: Audio glitches when playing multiple scores
-
-== Phase 3: Client/server (ZeroMQ)
-
-image::phase3.svg[]
-
-== !
-
-.Screenshot of zeromq.org, 2017
-[caption=""]
-image::zmq_pitch.png[]
-
-== !
-
-image::zmq_req_rep.png[background, size=25%]
-
-== Phase 3: Client/server (ZeroMQ)
-
-[%step]
-* [.line-through]#Problem: HTTP is a bit overkill for IPC#
-* Problem: Audio glitches when playing multiple scores
-
-== Phase 4: Client/server/workers
-
-image::phase4.svg[]
-
-== !
-
-image::alda_zmq_architecture.svg[]
-
-== Phase 4: Client/server/workers
-
-[%step]
-* [.line-through]#Problem: Audio glitches when playing multiple scores#
-* Problem: This is getting complicated.
-* Problem: User needs to manage server & workers
-* Problem: Can't do anything if workers are busy
-
-== Alda v2 wishlist
-
-[.notes]
---
-8 minutes for v2 wishlist, phase 5 and alda-clj
---
-
-[%step]
-* Move most functionality into the client
-* Simple, lightweight player process
-* Fast startup time / execution
-* Support for live coding
-** Edit a score on the fly while it's playing
-
-== Phase 5: Client/player
-
-image::phase5.svg[]
-
-== Open Sound Control (OSC)
-
-* http://opensoundcontrol.org
-* De facto standard for multimedia communication
-* Transported over UDP
-* Simple, open-ended message structure
-** `/track/1/midi/note 2000 61 500 500 127`
-
-== Phase 5: Client/player
-
-[.notes]
---
-* Going back to our phase 5 diagram, you'll notice that I haven't included any
-Clojure or Java logos.
-* That's because I've decided to change languages.
---
-
-image::phase5.svg[]
-
-== Phase 5: Client/player
-
-[.notes]
---
-* Kotlin in the player process
-** I wanted to stick with the JVM for now, as I've already figured out how to
-use the javax.sound.midi sequencer and synthesizer as a backend for Alda.
-** In the future, I may experiment with alternate backends.
-
-* Go in the client
-** Of the options I tried for languages that can produce native executables, Go
-provided the least friction when it comes to cross-compiling programs to fully
-static executables, absolutely no dynamic linking.
-** Not my favorite language in the world, but I've been pleasantly surprised.
-*** It turns out that the limitations of Go are actually its strength.
-*** You can't do anything complicated, so your code ends up not being
-complicated.
-
-* So where does Clojure fit into the picture?
---
-
-image::phase5a.svg[]
-
-== Phase 5: Client/player
-
-[.notes]
---
-* i realized that i could still use clojure to write alda scores in a way
-that doesn't require alda to be implemented in clojure
---
-
-[.shift-up-30px]
-image::phase5b.svg[]
 
 == !
 

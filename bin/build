@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-scriptdir=$(dirname $0)
+scriptdir="$(dirname "$0")"
 rootdir="$scriptdir/.."
 
 function estimated_length() {
@@ -10,8 +10,7 @@ function estimated_length() {
 }
 
 printf "Build: "
-bundle exec asciidoctor-revealjs "$rootdir/index.adoc"
-if [[ $? -eq 0 ]]; then
+if bundle exec asciidoctor-revealjs "$rootdir/index.adoc"; then
   printf OK
 else
   printf FAIL

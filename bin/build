@@ -16,4 +16,4 @@ else
   printf FAIL
 fi
 
-echo " (~$(estimated_length)/40 minutes planned)"
+echo " (~$(estimated_length)/150 minutes planned)"

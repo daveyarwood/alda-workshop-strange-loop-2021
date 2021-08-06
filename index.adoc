@@ -41,14 +41,37 @@ a|
 [no-bullet]
 * Music degree (UNC '08)
 * Alda creator/BDFL (2012-)
-* Software engineer at Adzerk (2014-)
+* Software engineer at Kevel (2014-)
 * icon:github[] *daveyarwood*
 * icon:twitter[] *@dave_yarwood*
 * image:keybase-logo.svg[keybase logo,25,25,role=inline] *daveyarwood*
 * icon:globe[] *djy.io, alda.io*
 |===
 
-== !
+== For questions, help, or to show off your amazing music...
+
+image::alda-slack.png[]
+
+* Register for free! -> https://slack.alda.io
+* Join the channel! -> #strangeloop
+* Feel free to ask questions! -> @dave How do I...
+
+== If you haven't already...
+
+[.notes]
+--
+* Actually go to the website and talk through the instructions
+* Mention that I'll pause before we begin and help anyone who's having trouble
+  installing Alda.
+* Talk a little about what PATH is, too.
+* If you've done everything right, you should be able to run the commands here
+  at the bottom of the page, and the last one will actually produce sound, just
+  as a heads up.
+--
+
+-> Install Alda now at https://alda.io/install <-
+
+== What is
 
 [.notes]
 --
@@ -73,7 +96,9 @@ TODO:
   snow_cone.jpg
 --
 
-image::elevator.jpg[background]
+image::alda-logo-horizontal.svg[]
+
+*?*
 
 == Music composition GUI
 

@@ -54,7 +54,7 @@ image::alda-slack.png[]
 
 * Register for free! -> https://slack.alda.io
 * Join the channel! -> #strangeloop
-* Feel free to ask questions! -> @dave How do I...
+* Feel free to ask questions! -> `@dave How do I...`
 
 == If you haven't already...
 
@@ -111,6 +111,10 @@ a|
 * Cumbersome
 * Limiting
 |===
+
+== The Feedback Loop
+
+image:feedback-loop.png[software development feedback loop diagram]
 
 == Music composition TUI
 

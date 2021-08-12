@@ -15,11 +15,8 @@
 --
 * Introduction
 ** 1 minute
-** This is a story about the relationship between two programming languages and
-how it has evolved over time.
-*** One of them is Alda, a text-based music composition language.
-*** The other is Clojure, a functional programming-oriented Lisp that runs on
-the JVM.
+** Not much to say here besides welcome, thanks for being here, this should be a
+lot of fun, etc.
 --
 
 image:alda-vim-thinkpad.jpg[]
@@ -29,9 +26,10 @@ image:alda-vim-thinkpad.jpg[]
 [.notes]
 --
 1 minute
-TODO: Add a big call-out to join Alda Slack!
-#strangeloop
-Can ask questions during workshop in Slack and I can answer them live
+* Here's a little bit about me
+* Quick timeline of my background
+** Don't go too into detail about the origin story of Alda, save it for the
+   later slides
 --
 
 [cols="2*"]
@@ -50,6 +48,14 @@ a|
 
 == For questions, help, or to show off your amazing music...
 
+[.notes]
+--
+1 minute
+* I'd like to welcome you to join the Alda community on Slack
+* As a bonus, you can use the `#strangeloop` channel to ask me questions during
+  the workshop.
+--
+
 image::alda-slack.png[]
 
 * Register for free! -> https://slack.alda.io
@@ -60,6 +66,9 @@ image::alda-slack.png[]
 
 [.notes]
 --
+* 2 minutes to talk through the points
+* Add 5 minutes wiggle room in case someone needs help adding `alda` and
+  `alda-player` to their PATH, or if there are any other issues.
 * Actually go to the website and talk through the instructions
 * Mention that I'll pause before we begin and help anyone who's having trouble
   installing Alda.
@@ -69,31 +78,27 @@ image::alda-slack.png[]
   as a heads up.
 --
 
--> Install Alda now at https://alda.io/install <-
+Install Alda now!
+
+-> https://alda.io/install <-
 
 == What is
 
 [.notes]
 --
-* Elevator pitch for Alda
-** 5 minutes
-** Alda is a language for writing music in a text format.
-** The text is your source code, which can parsed and interpreted by a playback
-process, which allows you to hear the music that you're writing as you're
-writing it.
-** I was inspired to create Alda after I studied music composition and then I
-got more into software development and I learned how I could use a text editor
-and the command line to develop software interactively.
-** I believe that a tight feedback loop is essential to unlocking your
-creativity both when you're developing software and when you're composing music.
-
-TODO:
-* Is this slide necessary, or should I jump straight into showing Sibelius vs.
-  TUI and telling the story of learning music composition in college, etc.?
-* Create slides showing the "feedback loop" concept in software development and
-  then in music composition.
-* Either create a slide about the Sapir-Whorf hypothesis, or remove
-  snow_cone.jpg
+* 2 minutes
+** Alda is a text-based music composition language
+** You can write your scores in a text format, as an alternative to traditional
+   sheet music. And I believe that there are benefits to writing music in a text
+   format, which I'll describe shortly.
+** Currently, the focus is on MIDI. Alda will play your scores using the MIDI
+   synthesizer that's built into the Java Virtual Machine. Or you can use Alda
+   to export a MIDI file, which you can do a lot of useful things with, such as
+   importing it into a DAW, or importing it into a sheet music notation program
+   if you want to convert your Alda score into traditional sheet music.
+** I do have some grand plans for the future that involve stepping outside of
+   MIDI and playing around with waveform synthesis and samplers and all of the
+   fun that that entails.
 --
 
 image::alda-logo-horizontal.svg[]
@@ -101,6 +106,40 @@ image::alda-logo-horizontal.svg[]
 *?*
 
 == Music composition GUI
+
+[.notes]
+--
+* 4 minutes
+* Tell the story of when I was studying music composition in college, and I used
+  Sibelius to notate the music that I was writing.
+** Music composition GUI programs like Sibelius and Finale are chock full of
+   features to the point that it can be disorienting. It can be difficult to
+   find exactly what you're looking for when you're writing a score. And while
+   you're trying to find it, you're likely to become distracted by a number of
+   other things. Meanwhile, your focus is taken away from the one thing that
+   really matters, which is the music that you're trying to write.
+** After using Sibelius for a while, I really started to feel like it was
+   cumbersome to get my musical ideas out in the form of sheet music.
+*** Part of this was that it's physically difficult to drag the notes and other
+    symbols around to be in exactly the place that you want them to go.
+*** Another issue is something that my composition professor, Allen Anderson,
+    cautioned us all about, which was that you should avoid _writing music_ in
+    Sibelius/Finale at all costs. These programs should be solely for _notating_
+    music. There is a real danger that these programs pose to your creativity if
+    you are attempting to write music right there with the program in front of
+    you. Because it's physically difficult to write music that is complex, you
+    will end up, without even thinking about it, writing music that can tend to
+    be boring and overly simplistic, simply because it's easier to notate in the
+    program.
+** So, for all of these reasons, in the back of my mind, I always had a vague
+   feeling of dissatisfaction, like there had to be an easier way to notate
+   musical ideas and combine them together to create scores.
+* I was inspired to create Alda after I studied music composition and then I
+got more into software development and I learned how I could use a text editor
+and the command line to develop software interactively.
+* I believe that a tight feedback loop is essential to unlocking your
+creativity both when you're developing software and when you're composing music.
+--
 
 [cols="3,2"]
 |===
@@ -114,10 +153,57 @@ a|
 
 == The Feedback Loop
 
+[.notes]
+--
+* 2 minutes
+* I wasn't really a software developer yet. I had played around with programming
+  as a kid, but I never really got into it until around my senior year of
+  college, when I took Introduction to Programming as an elective class, and I
+  learned some Java. Even then, I wasn't really introduced to what it was
+  _really_ like to build software until about a year or two later when I started
+  really learning Python, and then Ruby, and other languages, and I was writing
+  programs in these languages and learning how to make them work.
+* It was at that point that I learned about the software development feedback
+  loop. You write some code, then you run the code, and you look at the feedback
+  that you got from the compiler or the interpreter. Then you either celebrate
+  your success, or you have to figure out what went wrong. Then that leads you
+  to write more code, and then you run that code, and the cycle continues.
+* At some point, I realized that the process of writing _music_ is also a
+  feedback loop. You get a musical idea, and so you write it down. Then you play
+  it back somehow, maybe that's through music notation software, or maybe you're
+  just playing the music that you wrote back for yourself physically on your
+  instrument. Then you think about how that sounded to your ears, and you adjust
+  the music that you wrote down, and you iterate from there.
+* This was starting to feel so similar to me to the software development
+  feedback loop, that I began to have thoughts about developing music the way
+  that I develop software, using a text editor and the command line as my
+  feedback loop.
+--
+
 image:feedback-loop.png[software development feedback loop diagram]
 
 == Music composition TUI
 
+[.notes]
+--
+* 3 minutes
+* In stark contrast to the music notation GUI software that we saw a couple of
+  slides ago, there is far less here to distract you. All you have is text on
+  the screen, and a language that you can work with to express your musical
+  ideas.
+* Now, I do think there is a _little_ bit of a language curve, so perhaps at
+  first, this won't feel as efficient to you as, say, placing notes on a
+  graphical canvas in a program like Sibelius. But once you get over that
+  language curve, I think you'll find that text-based music composition is a lot
+  more efficient in terms of how fast you can notate a musical idea and hear it
+  played back for you.
+* Another significant benefit is that, because Alda isn't tethered to standard
+  musical notation, it means that you can do a lot of bizarre and interesting
+  things that would be very difficult to notate in traditional sheet music.
+  You'll begin to realize the limitations that come with traditional sheet music
+  notation, and how easy it is to go against the grain in Alda and try something
+  different, and that experience feels really liberating.
+--
 [cols="3,2"]
 |===
 | image:jimenez_screenshot.png[editing an Alda score]
@@ -127,6 +213,21 @@ a|
 * Efficient
 * Liberating
 |===
+
+== !
+
+image::snow_cone.jpg[cartoon about an eskimo selling snow cones,614,500]
+
+[.notes]
+--
+* 3 minutes
+* There is a principle called the Sapir-Whorf hypothesis, or the hypothesis of
+  linguistic relativity. The idea is that the structure of a language or the
+  ideas that can be expressed in that language have an effect on the speaker's
+  ability to think and their perceptions about the world.
+--
+
+//////////////////////////////////////////////////////////////////////////////
 
 == !
 
@@ -152,3 +253,4 @@ image::alda-clj.png[]
 * _Meteorology_ piece
 --
 
+//////////////////////////////////////////////////////////////////////////////

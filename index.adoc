@@ -227,6 +227,10 @@ image::snow_cone.jpg[cartoon about an eskimo selling snow cones,614,500]
   ability to think and their perceptions about the world.
 --
 
+== !
+
+image::dip-toe-into-repl.png[]
+
 //////////////////////////////////////////////////////////////////////////////
 
 == !

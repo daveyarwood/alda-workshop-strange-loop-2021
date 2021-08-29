@@ -5,3 +5,4 @@
 .lsp/
 .cpcache/
 .socket-port
+.alda-nrepl-port

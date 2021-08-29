@@ -191,10 +191,10 @@ image:feedback-loop.png[software development feedback loop diagram]
   slides ago, there is far less here to distract you. All you have is text on
   the screen, and a language that you can work with to express your musical
   ideas.
-* Now, I do think there is a _little_ bit of a language curve, so perhaps at
+* Now, I do think there is a _little_ bit of a learning curve, so perhaps at
   first, this won't feel as efficient to you as, say, placing notes on a
   graphical canvas in a program like Sibelius. But once you get over that
-  language curve, I think you'll find that text-based music composition is a lot
+  learning curve, I think you'll find that text-based music composition is a lot
   more efficient in terms of how fast you can notate a musical idea and hear it
   played back for you.
 * Another significant benefit is that, because Alda isn't tethered to standard
@@ -230,6 +230,51 @@ image::snow_cone.jpg[cartoon about an eskimo selling snow cones,614,500]
 == !
 
 image::dip-toe-into-repl.png[]
+
+[.notes]
+--
+* TODO: time this
+* Run `alda repl`
+* Start with `piano: c`, show some other instruments too
+* `c d e f g a b > c`
+** Explain octaves
+--
+
+== !
+
+image::middle-c-on-keyboard.png[]
+
+image::middle-c-between-staves.jpg[]
+
+[.notes]
+--
+* TODO: time this
+* Explain the layout of the keyboard
+* Scientific notation
+* Talk through the scale starting at C3 and walking up to C5
+* Write it in Alda
+--
+
+== !
+
+image::keyboard-closeup.jpg[50%,50%]
+
+image::keyboard-labeled.jpg[75%,75%]
+
+[.notes]
+--
+* TODO: time this
+* Introduce accidentals
+* Explain why there isn't a black key in between E/F, B/C
+** If there were, we would have 14TET, not 12TET, and music would sound very
+   different from what we're used to
+* Explain (and demonstrate) notes sounding the same, but having a
+  different enharmonic spelling (e.g. C# and Db, B# and C)
+--
+
+== The Circle of Fifths
+
+image::circle-of-fifths.png[500,500]
 
 //////////////////////////////////////////////////////////////////////////////
 

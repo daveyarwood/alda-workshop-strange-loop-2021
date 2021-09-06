@@ -276,6 +276,10 @@ image::keyboard-labeled.jpg[75%,75%]
 
 image::circle-of-fifths.png[500,500]
 
+== !
+
+image::table-of-note-lengths.png[]
+
 //////////////////////////////////////////////////////////////////////////////
 
 == !

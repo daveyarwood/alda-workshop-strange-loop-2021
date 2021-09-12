@@ -276,9 +276,89 @@ image::keyboard-labeled.jpg[75%,75%]
 
 image::circle-of-fifths.png[500,500]
 
+[.notes]
+--
+* TODO: time this
+* Walk through constructing scales, with correct accidentals based on the key
+* Allude to there being an easier way to work with keys in Alda
+* Introduce the `key-signature` attribute
+** Good opportunity to move to using a text editor
+** Resist the temptation to do `key-sig!` at the top of the score, too much
+information for right now.
+** Necessary short breakdown of Lisp, why the single quote in:
+*** `(key-sig '(a major))`
+
+--
+
+== Exercise time!
+
+* Write an E major scale (sharp notes: F#, C#, G#, D#)
+** ...first, using accidentals (no `key-sig`)
+** ...then, using `key-sig` (no accidentals)
+
+[.notes]
+--
+* Give everyone ~2 minutes to figure it out themselves
+* Walk through it myself (2 minutes)
+--
+
 == !
 
 image::table-of-note-lengths.png[]
+
+[.notes]
+--
+* TODO: time this
+* Go through the table line by line, show how to represent these in Alda
+* Write a score like `c1 | c2 c | c4 c c c`
+* Discuss how in Alda, it's easy to go outside of powers of 2
+** `c1 | c2 c | c3 c c | c4 c c c | c5 c c c c`
+** Conduct in 4/4 along with this, with big downbeats
+** In most popular Western music, you'll only ever hear rhythms based on the
+   powers of 2.
+** Powers of 3 are also fairly common. In standard musical notation, we tend to
+   refer to those rhythms in terms of _triplets_ and _sextuplets_.
+--
+
+== Example: Star Wars theme
+
+```
+(key-sig! '(b flat major))
+
+trumpet:
+  f12 f f | b2 > f        | e12 d c b2 f4 |
+          | e12 d c b2 f4 | e12 d e c2 |
+```
+
+[.notes]
+--
+* TODO: Add sheet music
+--
+
+== Cram expressions
+
+```
+tenor-sax:
+  {c}2
+  {c d}2
+  {c d e}2
+  {c d e f}2
+  {c d e f g}2
+  {c d e f g a}2
+  {c d e f g a}4 {c d e f g a}4 {d e f g a b}4 > c2
+```
+
+[.notes]
+--
+TODO:
+* chords
+* voices
+* multiple parts
+* markers
+* repeats
+** alternate endings
+* variables
+--
 
 //////////////////////////////////////////////////////////////////////////////
 

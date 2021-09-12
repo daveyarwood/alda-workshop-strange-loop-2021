@@ -1,0 +1,5 @@
+(key-sig! '(b flat major))
+
+trumpet:
+  f12 f f | b2 > f        | e12 d c b2 f4 |
+          | e12 d c b2 f4 | e12 d e c2 |

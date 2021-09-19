@@ -1,0 +1,19 @@
+midi-electric-piano-1:
+  o4 c2/e/g # I
+  o4 d/f/a  # ii
+  o4 e/g/b  # iii
+  o4 f/a/>c # IV
+  o4 g/b/>d # V
+  o4 a/>c/e # vi
+  o4 b/>d/f # vii°
+  o5 c/e/g
+
+midi-electric-piano-1:
+  (quant 30)
+  [
+    [ o4 c8/e/g ] *4 # I
+    [ o4 f/a/>c ] *4 # IV
+    [ o4 g/b/>d ] *4 # V
+    [ o4 f/a/>c ] *4 # IV
+  ]*4
+

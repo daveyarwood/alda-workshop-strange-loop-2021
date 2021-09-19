@@ -233,7 +233,7 @@ image::dip-toe-into-repl.png[]
 
 [.notes]
 --
-* TODO: time this
+* 4 minutes
 * Run `alda repl`
 * Start with `piano: c`, show some other instruments too
 * `c d e f g a b > c`
@@ -248,7 +248,7 @@ image::middle-c-between-staves.jpg[]
 
 [.notes]
 --
-* TODO: time this
+* 3 minutes
 * Explain the layout of the keyboard
 * Scientific notation
 * Talk through the scale starting at C3 and walking up to C5
@@ -263,7 +263,7 @@ image::keyboard-labeled.jpg[75%,75%]
 
 [.notes]
 --
-* TODO: time this
+* 12 minutes
 * Introduce accidentals
 * Explain why there isn't a black key in between E/F, B/C
 ** If there were, we would have 14TET, not 12TET, and music would sound very
@@ -278,7 +278,7 @@ image::circle-of-fifths.png[500,500]
 
 [.notes]
 --
-* TODO: time this
+* 11 minutes
 * Walk through constructing scales, with correct accidentals based on the key
 * Allude to there being an easier way to work with keys in Alda
 * Introduce the `key-signature` attribute
@@ -290,7 +290,7 @@ information for right now.
 
 --
 
-== Exercise time!
+== 10 minute break / exercise
 
 * Write an E major scale (sharp notes: F#, C#, G#, D#)
 ** ...first, using accidentals (no `key-sig`)
@@ -298,6 +298,7 @@ information for right now.
 
 [.notes]
 --
+* 10 minute break
 * Give everyone ~2 minutes to figure it out themselves
 * Walk through it myself (2 minutes)
 --
@@ -308,12 +309,12 @@ image::table-of-note-lengths.png[]
 
 [.notes]
 --
-* TODO: time this
+* 15 minutes (including next slide)
 * Go through the table line by line, show how to represent these in Alda
 * Write a score like `c1 | c2 c | c4 c c c`
 * Discuss how in Alda, it's easy to go outside of powers of 2
 ** `c1 | c2 c | c3 c c | c4 c c c | c5 c c c c`
-** Conduct in 4/4 along with this, with big downbeats
+** Add a midi-woodblock, to make the number of beats per note more obvious
 ** In most popular Western music, you'll only ever hear rhythms based on the
    powers of 2.
 ** Powers of 3 are also fairly common. In standard musical notation, we tend to
@@ -322,20 +323,26 @@ image::table-of-note-lengths.png[]
 
 == Example: Star Wars theme
 
-```
-(key-sig! '(b flat major))
-
-trumpet:
-  f12 f f | b2 > f        | e12 d c b2 f4 |
-          | e12 d c b2 f4 | e12 d e c2 |
-```
-
 [.notes]
 --
 * TODO: Add sheet music
 --
 
+
+```
+(key-sig! '(b flat major))
+
+trumpet:
+  f12 f f | b2 > f        | e12 d c b2 f4 |
+          | e12 d c b2 f4 | e12 d e c2    |
+```
+
 == Cram expressions
+
+[.notes]
+--
+* 10 minutes (estimate)
+--
 
 ```
 tenor-sax:
@@ -348,10 +355,37 @@ tenor-sax:
   {c d e f g a}4 {c d e f g a}4 {d e f g a b}4 > c2
 ```
 
+== Second/millisecond durations
+
+[.notes]
+--
+1 minute
+--
+
+```
+midi-saw-wave:
+  o2
+  a2s
+  f1234ms
+  e300ms
+  d5s
+```
+
+== Chords
+
+[.notes]
+--
+* 10 minutes (estimate)
+* See demo/chords.alda
+--
+
+image::c-major-scale-in-triads.webp[]
+
+== TODO
+
 [.notes]
 --
 TODO:
-* chords
 * voices
 * multiple parts
 * markers

@@ -287,6 +287,8 @@ image::circle-of-fifths.png[500,500]
 information for right now.
 ** Necessary short breakdown of Lisp, why the single quote in:
 *** `(key-sig '(a major))`
+*** Can maybe explain this is greater depth at the end, when we're working in
+    Clojure?
 
 --
 
@@ -323,12 +325,6 @@ image::table-of-note-lengths.png[]
 
 == Example: Star Wars theme
 
-[.notes]
---
-* TODO: Add sheet music
---
-
-
 ```
 (key-sig! '(b flat major))
 
@@ -336,6 +332,8 @@ trumpet:
   f12 f f | b2 > f        | e12 d c b2 f4 |
           | e12 d c b2 f4 | e12 d e c2    |
 ```
+
+image::star-wars-theme.png[]
 
 == Cram expressions
 
@@ -381,12 +379,26 @@ midi-saw-wave:
 
 image::c-major-scale-in-triads.webp[]
 
+== Voices
+
+[.notes]
+--
+1 minute
+--
+
+```
+clavinet:
+  V1: c8 d e f g a b > c1
+  V2: e8 f g a b > c d e1
+  V3: g8 a b > c d e f g1
+  V4: o2 c2 g4 < g8 c1
+```
+
 == TODO
 
 [.notes]
 --
 TODO:
-* voices
 * multiple parts
 * markers
 * repeats

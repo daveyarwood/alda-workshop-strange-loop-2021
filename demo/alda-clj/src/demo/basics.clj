@@ -2,18 +2,22 @@
   (:require [alda.core :refer :all]))
 
 (comment
-  ;; shells out to the alda CLI
+  ;; Shells out to the alda CLI
   (alda "version")
-  (alda "status")
+  (alda "ps")
+
+  ;; Connect/disconnect from your Alda REPL
+  (connect!)
+  (disconnect!)
 
   ;; Forget about current tempo, octave, instruments, etc.
   ;; Start from a clean slate.
-  (clear-history!)
+  (new-score!)
 
-  ;; stop playback
+  ;; Stop playback
   (stop!)
 
-  ;; shorthand for "alda play -c 'piano: o4 c1 / e- / g'"
+  ;; Equivalent to running "alda play -c 'piano: o4 c1 / e- / g'"
   (play!
     (part "piano")
     (octave 4)
@@ -21,7 +25,7 @@
            (note (pitch :e :flat))
            (note (pitch :g))))
 
-  ;; working with sequences of musical events (notes, rests, etc.)
+  ;; Working with sequences of musical events (notes, rests, etc.)
   (play!
     (part "piano")
     (set-note-length 16)
@@ -29,7 +33,7 @@
                (for [letter [:c :d :e :f :g]]
                  (note (pitch letter)))))
 
-  ;; generate a sequence of random notes
+  ;; Generate a sequence of random notes
   (play!
     (part "piano")
     (for [[length note-number]
@@ -59,7 +63,7 @@
 
 (comment
   (do
-    (clear-history!)
+    (new-score!)
     (stop!))
 
   (def REST-RATE 0.15)
@@ -85,12 +89,12 @@
   (play!
     (part "midi-electric-piano-1")
     (panning 25)
-    (repeatedly 50 random-note)
+    (repeatedly 20 random-note)
 
     (part "midi-timpani")
     (panning 50)
-    (repeatedly 50 random-note)
+    (repeatedly 20 random-note)
 
     (part "midi-celesta")
     (panning 75)
-    (repeatedly 50 random-note)))
+    (repeatedly 20 random-note)))

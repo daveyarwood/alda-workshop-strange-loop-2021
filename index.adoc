@@ -317,7 +317,7 @@ image::table-of-note-lengths.png[]
 * Discuss how in Alda, it's easy to go outside of powers of 2
 ** `c1 | c2 c | c3 c c | c4 c c c | c5 c c c c`
 ** Add a midi-woodblock, to make the number of beats per note more obvious
-** In most popular Western music, you'll only ever hear rhythms based on the
+** In most popular Western music, you tend to only hear rhythms based on the
    powers of 2.
 ** Powers of 3 are also fairly common. In standard musical notation, we tend to
    refer to those rhythms in terms of _triplets_ and _sextuplets_.
@@ -387,49 +387,57 @@ image::c-major-scale-in-triads.webp[]
 --
 
 ```
-clavinet:
+piano:
   V1: c8 d e f g a b > c1
   V2: e8 f g a b > c d e1
   V3: g8 a b > c d e f g1
-  V4: o2 c2 g4 < g8 c1
+  V4: o3 c2 g4 < g8 c1
 ```
 
-== TODO
+== Parts
 
 [.notes]
 --
-TODO:
-* multiple parts
-* markers
-* repeats
-** alternate endings
-* variables
+1 minute
 --
 
-//////////////////////////////////////////////////////////////////////////////
+```
+oboe:
+  c8 d e f g a b > c1
 
-== !
+clarinet:
+  e8 f g a b > c d e1
 
-image::alda-clj.png[]
+flute:
+  g8 a b > c d e f g1
+
+bassoon:
+  o3 c2 g4 < g8 c1
+```
+
+== Variables
 
 [.notes]
 --
-* A Clojure library that drives the Alda CLI
-* API docs via cljdoc
-* You have full control of your Clojure program
-** Can bring in Clojure libraries as dependencies
-* Clojure's REPL-driven development style unlocks creativity
-** Easier to experiment in a Clojure REPL than it is working with an Alda file
+2 minutes
 --
 
-== Demo: alda-clj
+```
+(tempo! 130)
 
-[.notes]
---
-7 minutes
+nicebass = o2 c8. > c16 < r8 e4 f8 f+ g
 
-* Demonstrate basic usage in editor-connected REPL
-* _Meteorology_ piece
---
+midi-acoustic-bass:
+  nicebass*2
+  (transpose 5) nicebass*2
+  (transpose 7) nicebass*2
+  (transpose 0) o3 c8 c c c < g a b > c
+```
 
-//////////////////////////////////////////////////////////////////////////////
+== Generative music
+
+* Source -> Data -> Music
+* Alda libraries:
+** Clojure: https://github.com/daveyarwood/alda-clj
+** Ruby: https://github.com/UlyssesZh/alda-rb
+** Julia: https://github.com/SalchiPapa/Alda.jl

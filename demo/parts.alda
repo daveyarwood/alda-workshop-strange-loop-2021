@@ -1,0 +1,11 @@
+oboe:
+  c8 d e f g a b > c1
+
+clarinet:
+  e8 f g a b > c d e1
+
+flute:
+  g8 a b > c d e f g1
+
+bassoon:
+  o3 c2 g4 < g8 c1

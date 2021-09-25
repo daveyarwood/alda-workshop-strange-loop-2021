@@ -6,3 +6,4 @@
 .cpcache/
 .socket-port
 .alda-nrepl-port
+.nrepl-port

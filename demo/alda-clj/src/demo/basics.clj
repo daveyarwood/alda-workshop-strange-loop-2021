@@ -36,6 +36,7 @@
   ;; Generate a sequence of random notes
   (play!
     (part "piano")
+    ;; (quant 2000)
     (for [[length note-number]
           (repeatedly 8 #(list
                            (+ 250 (rand-int 750))
